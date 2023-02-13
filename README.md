@@ -26,7 +26,7 @@ For the purpose of managing library more efficiently we as a group making an man
 --- 
 > **Description**
 
-A library management system using Python, HTML, and CSS. Here is an outline of the main sections you might include in the proposal:
+A library management system using Node and react . Here is an outline of the main sections you might include in the proposal:
 
 Introduction: Provide an overview of the library management system project, including its purpose and goals.
 
