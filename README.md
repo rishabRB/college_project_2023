@@ -28,9 +28,9 @@ For the purpose of managing library more efficiently we as a group making an man
 
 A library management system using Node and react . Here is an outline of the main sections you might include in the proposal:
 
-Introduction: Provide an overview of the library management system project, including its purpose and goals.
+`Introduction`: Provide an overview of the library management system project, including its purpose and goals.
 
-Background: Explain the context for the project, including any problems or challenges that it aims to address.
+`Background` : Explain the context for the project, including any problems or challenges that it aims to address.
 
 Project scope: Define the scope of the project, including any specific features or functionality that will be included in the library management system.
 
