@@ -1,18 +1,23 @@
 import {PrinterIcon, TvIcon, UserIcon, WalletIcon } from '@heroicons/react/24/solid'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Carousel from '../components/carousel'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import {quotes} from '../utils/data'
-// import {Cursor,useTypewriter} from 'react-simple-typewriter'
 
 function Home() {
+  const navigate = useNavigate()
+  const handleClick=()=>{
+     navigate("/search")
+  }
+
   return (
     <>
-    <Navbar />
+    <Navbar home={true}/>
 
     {/* Banner section */}
-    <section className='h-[600px] bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800")] bg-image'>
+    <section className='h-[600px] bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800")] bg-opacity-80 bg-image'>
     <div className='relative grid grid-cols-2'>
               <div className='hidden sm:flex flex-col absolute space-y-4 left-8 top-52 w-1/2'>
                 {/* show content */}
@@ -40,6 +45,7 @@ function Home() {
                     placeholder="Author's name "
                     />
                     <button
+                    onClick={handleClick}
                     className='p-3 rounded font-semibold bg-black text-sm text-white uppercase '
                     >Search</button>
               </div>

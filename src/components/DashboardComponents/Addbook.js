@@ -1,0 +1,57 @@
+import { PlusIcon } from '@heroicons/react/24/solid'
+import React from 'react'
+
+function Addbook() {
+  return (
+    <>
+    <div className='flex flex-col h-full sm:h-[86vh] '>
+    <div className='p-5 m-5 border-2 border-gray-200 flex space-x-2 items-center justify-center'>
+      <PlusIcon className='h-8 w-8 text-orange-500' />
+      <h1 className='headingText'>Add book</h1>
+    </div>
+    <div className='px-5 w-full flex flex-col sm:flex-row justify-around items-center space-x-4 space-y-4'>
+        <form className='flex sm:w-1/2 justify-start flex-col space-y-4'>
+        <h2 className='uppercase font-medium'>Enter the following details</h2>
+            <input 
+            className='issueButton'
+            value=""
+            placeholder='Book id'
+            />
+            <input
+             placeholder='Author Name'
+             value=""
+             className='issueButton'
+             />
+            <input
+             placeholder='Total Number of book'
+             value=""
+             className='issueButton'
+             />
+            <input
+             placeholder='Book Image (url)'
+             value=""
+             className='issueButton'
+             />
+             <input
+             type="submit"
+              className='px-5 py-3 w-full sm:w-[50%] bg-black text-white rounded-2xl'
+              />
+        </form>
+        {/* preview section */}
+        <div className='flex w-full sm:w-1/3 h-[400px] items-center justify-center shadow-2xl rounded-xl p-5'>
+            <div className='flex w-full flex-col  items-center justify-center space-y-4'>
+               <img className='w-[200px] h-[200px] ' src="https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg" alt="" /> 
+               <div className='flex flex-col items-start space-y-1'>
+                  <h2 className='text-sm uppercase font-medium'>Book id : 12262</h2>
+                  <h2 className='text-sm uppercase font-medium'>Name : The Great Gatsby</h2>
+                  <h2 className='text-sm uppercase font-medium'>Author : Joshep Murphy</h2>
+               </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </>
+  )
+}
+
+export default Addbook

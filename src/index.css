@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+@layer components{
+  .button{
+    @apply  p-5 sm:p-3 sm:m-2 w-full rounded-xl text-gray-200 sm:mx-5 flex space-x-2 cursor-pointer items-center  hover:scale-110 transition duration-200 ease-out sm:hover:bg-gray-100/30 sm:hover:text-black
+  }
+
+  .issueButton{
+    @apply px-5 py-3 border rounded-xl outline-0 
+  }
+
+  .sidebarText{
+    @apply hidden text-[12px] sm:text-sm sm:flex 
+  }
+
+  .headingText{
+    @apply text-2xl text-gray-500 uppercase tracking-[2px] font-medium font-Ubuntu
+  }
+}
 
 body {
   margin: 0;

@@ -13,7 +13,8 @@ const Carousel = ({ quotes }) => {
   };
 
   return (
-    <div className="relative h-[500px] w-[80%] bg-white p-10 rounded-xl">
+    <div className="relative h-[500px] w-[80%] bg-[#fafafa] border p-10 rounded-xl shadow-[14px 14px 28px #d5d5d5,
+      -14px -14px 28px #ffffff;]">
     
      {/* arrow left */}
       <button
