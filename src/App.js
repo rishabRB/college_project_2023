@@ -9,6 +9,9 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import ProgressBar from '@badrap/bar-of-progress'
 import Search from './pages/Search';
+import Loading from './pages/Loading';
+import { useEffect,useState } from 'react';
+import BasicLoading from './pages/BasicLoading';
 
 
 // progress bar 
@@ -24,12 +27,16 @@ setTimeout(() => {
   progress.finish();
 }, 1000);
 
+
+
 function App() {
   return (
     <Router>
     <div className="App">
       <Routes>
-       <Route path='/' element={<Home/>} />
+       <Route path="/loading" element={<BasicLoading />} />
+       <Route path="/" element={<Loading />} />
+       <Route path='/home' element={<Home/>} />
        <Route path='/login' element={<Login />} />
        <Route path="/dashboard" element={<Dashboard />} />
        <Route path="/search" element={<Search />} />

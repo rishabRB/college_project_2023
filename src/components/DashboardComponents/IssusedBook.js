@@ -4,7 +4,7 @@ import React from 'react'
 function IssusedBook() {
   return (
     <>
-    <div className='flex flex-col h-[86vh] '>
+    <div className='flex flex-col h-[86vh] font-mono'>
     <div className='p-5 m-5 border-2 border-gray-200 flex space-x-2 items-center justify-center'>
       <ChartBarIcon className='h-8 w-8 text-orange-500' />
       <h1 className='headingText'>Issued book</h1>

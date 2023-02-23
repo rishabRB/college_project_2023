@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Footer() {
+function Footer({bgColor}) {
   return (
-    <div className='bg-black'>
-        <h1 className='text-white'>Developed@ by ganjeri-group | All 	&#169; copyright is preserved@2023</h1>
+    <div className={`${bgColor ? 'bg-black text-white' : 'bg-white text-black'}`}>
+        <h1 >Developed@ by ganjeri-group | All 	&#169; copyright is preserved@2023</h1>
     </div>
   )
 }

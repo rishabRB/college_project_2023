@@ -7,8 +7,12 @@ module.exports = {
     extend: {
       fontFamily: {
         Ubuntu: ["Ubuntu"],
+        BebasNeue:["Bebas Neue"]
        },
+       animation: {
+        'spin-slow': 'spin 3s linear finite',
+      }
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 }

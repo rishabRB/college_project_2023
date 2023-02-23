@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
 
 
 
@@ -17,11 +18,11 @@
   }
 
   .sidebarText{
-    @apply hidden text-[12px] sm:text-sm sm:flex 
+    @apply hidden text-[10px] md:text-sm lg:flex 
   }
 
   .headingText{
-    @apply text-2xl text-gray-500 uppercase tracking-[2px] font-medium font-Ubuntu
+    @apply text-2xl text-gray-500 uppercase tracking-[2px] font-bold font-mono
   }
 }
 

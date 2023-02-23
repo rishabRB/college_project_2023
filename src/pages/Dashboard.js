@@ -81,7 +81,7 @@ function Dashboard() {
 
       <div onClick={()=>handleClick("issue")} className='button'>
           <DocumentTextIcon className='h-6 w-6'/>
-          <span className='hidden text-sm sm:flex sm:text-lg'>Issue</span>
+          <span className='sidebarText'>Issue</span>
         </div>
 
 
@@ -123,7 +123,7 @@ function Dashboard() {
         {editBook && <EditBook />}
       </div>
     </section>
-    <Footer />
+    <Footer bgColor={true} />
     </>
   )
 }

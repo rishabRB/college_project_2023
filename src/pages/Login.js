@@ -15,11 +15,11 @@ function Login() {
   return (
     <>
     <Navbar home={true}/>
-    <div className='h-[715px] relative bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800")] bg-image'>
+    <div className='h-[680px] relative bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800")] bg-image'>
         <div className='w-[400px] absolute right-12 top-32 h-[420px] py-5 px-10 bg-white rounded-xl'>
             {/* error section */}
             {error &&  <div className='text-[10px] text-red-600'>
-                <span>Incorrect password / username</span>
+                <span>Incorrect password/username</span>
             </div> }
 
             {/* default section */}
@@ -52,7 +52,7 @@ function Login() {
             </form>
         </div>
     </div>
-    <Footer />
+    <Footer bgColor={true}/>
     </>
   )
 }

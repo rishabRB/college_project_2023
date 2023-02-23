@@ -4,7 +4,7 @@ import React from 'react'
 function Addbook() {
   return (
     <>
-    <div className='flex flex-col h-full sm:h-[86vh] '>
+    <div className='flex flex-col h-full sm:h-[86vh] font-mono'>
     <div className='p-5 m-5 border-2 border-gray-200 flex space-x-2 items-center justify-center'>
       <PlusIcon className='h-8 w-8 text-orange-500' />
       <h1 className='headingText'>Add book</h1>
@@ -38,8 +38,9 @@ function Addbook() {
               />
         </form>
         {/* preview section */}
-        <div className='flex w-full sm:w-1/3 h-[400px] items-center justify-center shadow-2xl rounded-xl p-5'>
+        <div className='flex w-full sm:w-1/3 h-[400px] items-center justify-center  bg-black/5 p-5'>
             <div className='flex w-full flex-col  items-center justify-center space-y-4'>
+                <span className='uppercase'>Book preview</span>
                <img className='w-[200px] h-[200px] ' src="https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg" alt="" /> 
                <div className='flex flex-col items-start space-y-1'>
                   <h2 className='text-sm uppercase font-medium'>Book id : 12262</h2>
