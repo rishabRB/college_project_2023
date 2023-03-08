@@ -14,13 +14,13 @@ function Loading() {
   return (
     <>
     <Navbar home={true} />
-    <div className='h-[680px] w-screen bg-white items-center font-mono justify-center flex'>
+    <div className='h-[680px] xl:h-screen  w-screen bg-white items-center font-mono justify-center flex'>
         <div className='flex items-center justify-center flex-col'>
           <BookOpenIcon  className='h-40 w-40 animate-bounce text-orange-400 m-3'/>
           <h1 className='uppercase text-3xl font-bold'>Welcome to <spna className="text-orange-400">LMS</spna></h1>
         </div>
     </div>
-    <Footer />
+    <Footer bgColor={true} />
     </>
   )
 }

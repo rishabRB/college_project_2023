@@ -10,7 +10,7 @@
 
 @layer components{
   .button{
-    @apply  p-5 sm:p-3 sm:m-2 w-full rounded-xl text-gray-200 sm:mx-5 flex space-x-2 cursor-pointer items-center  hover:scale-110 transition duration-200 ease-out sm:hover:bg-gray-100/30 sm:hover:text-black
+    @apply  p-5 sm:p-3 sm:m-2 w-full sm:w-[80%] xl:w-full rounded-xl text-gray-200 sm:mx-5 flex space-x-2 cursor-pointer items-center  hover:scale-110 transition duration-200 ease-out sm:hover:bg-gray-100/30 sm:hover:text-black
   }
 
   .issueButton{

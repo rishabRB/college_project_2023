@@ -1,7 +1,12 @@
 import { DocumentTextIcon, HomeIcon } from '@heroicons/react/24/solid'
 import React from 'react'
+import {useForm} from 'react-hook-form'
 
 function IssueBook() {
+  const {register, handleSubmit, watch, formState: { errors }} = useForm();
+  const onSubmit=(data)=>{
+  console.log(data)
+ }  
   return (
     <>
     <div className='flex flex-col h-full sm:h-[86vh] font-mono '>
@@ -13,23 +18,23 @@ function IssueBook() {
         <form className='flex sm:w-1/2 justify-start flex-col space-y-4'>
         <h2 className='uppercase font-medium'>Enter the following details</h2>
             <input 
+            {...register('book_id')}
             className='issueButton'
-            value=""
             placeholder='Book id'
             />
             <input
+            {...register('student_name')}
              placeholder='Student Name'
-             value=""
              className='issueButton'
              />
             <input 
+            {...register('registration_number')}
             className='issueButton'
-            value=""
             placeholder='Registration number'
             />
             <input
+             {...register('return_date')}
              placeholder='Return date'
-             value=""
              className='issueButton'
              />
              <input

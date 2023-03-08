@@ -70,9 +70,9 @@ function Dashboard() {
   return (
     <>
     <Navbar name="Dashboard"/>
-    <section className= "bg-white flex">
+    <section className= "bg-white flex h-[680px] xl:h-screen ">
       {/* work you can do section */}
-      <sidebar className="w-[20%] border shadow-xl bg-orange-400 flex ">
+      <div className="w-[20%] border shadow-xl bg-orange-400 flex ">
       <div className='flex'>
       <div className=' w-[40px] h-full py-3 px-2 bg-orange-500 '>
         <HomeIcon className='h-6 w-6' />
@@ -112,7 +112,7 @@ function Dashboard() {
         </div>
       </div>
       </div>
-      </sidebar>
+      </div>
 
       {/* work to do section */}
       <div className='w-[80%] my-2'>

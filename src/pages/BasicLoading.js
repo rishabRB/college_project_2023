@@ -14,7 +14,7 @@ function BasicLoading() {
   return (
     <>
     <Navbar home={true} />
-    <div className='h-[680px] bg-white flex flex-col justify-center items-center'>
+    <div className='h-[680px] xl:h-screen bg-white flex flex-col justify-center items-center'>
         <BookOpenIcon className='h-24 w-24 animate-spin text-orange-400' />
         <h1 className='uppercase tracking-[3px] font-medium text-2xl mt-5'>Loading<span className='text-orange-400'>...</span></h1>
     </div>

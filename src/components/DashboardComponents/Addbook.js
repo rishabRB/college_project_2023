@@ -1,7 +1,13 @@
 import { PlusIcon } from '@heroicons/react/24/solid'
 import React from 'react'
+import {useForm} from 'react-hook-form'
+
 
 function Addbook() {
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit=(data)=>{
+  console.log(data)
+}   
   return (
     <>
     <div className='flex flex-col h-full sm:h-[86vh] font-mono'>
@@ -10,26 +16,26 @@ function Addbook() {
       <h1 className='headingText'>Add book</h1>
     </div>
     <div className='px-5 w-full flex flex-col sm:flex-row justify-around items-center space-x-4 space-y-4'>
-        <form className='flex sm:w-1/2 justify-start flex-col space-y-4'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex sm:w-1/2 justify-start flex-col space-y-4'>
         <h2 className='uppercase font-medium'>Enter the following details</h2>
             <input 
+            {...register('book_id')}
             className='issueButton'
-            value=""
             placeholder='Book id'
             />
             <input
+            {...register('author_name')}
              placeholder='Author Name'
-             value=""
              className='issueButton'
              />
             <input
+            {...register('total_books')}
              placeholder='Total Number of book'
-             value=""
              className='issueButton'
              />
             <input
+            {...register('image_url')}
              placeholder='Book Image (url)'
-             value=""
              className='issueButton'
              />
              <input
