@@ -21,6 +21,13 @@ For the purpose of managing library more efficiently we as a group making an man
 * MongoDB
 * Vercel
 
+## Photo Gallery
+<img width="720" alt="Screenshot 2023-02-23 at 18 03 01" src="https://user-images.githubusercontent.com/58904133/221347130-07bca97c-13a1-4bbf-90c2-cbb092941a32.png">
+<img width="720" alt="Screenshot 2023-02-23 at 18 03 15" src="https://user-images.githubusercontent.com/58904133/221347132-9df45646-814d-4dbd-ac8a-5f05e72946f4.png">
+<img width="720" alt="Screenshot 2023-02-23 at 18 03 22" src="https://user-images.githubusercontent.com/58904133/221347136-5dd44f72-100a-43aa-b31a-b6e88373725b.png">
+<img width="720" alt="Screenshot 2023-02-23 at 18 03 35" src="https://user-images.githubusercontent.com/58904133/221347142-de06167a-28e5-42cf-abdd-f5f45f9dc0bd.png">
+
+
 
 
 --- 
