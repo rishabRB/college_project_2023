@@ -1,9 +1,14 @@
 import React,{useState} from 'react'
-import { BookOpenIcon, UserCircleIcon,MagnifyingGlassIcon} from '@heroicons/react/24/solid'
+import { BookOpenIcon,HomeIcon ,UserCircleIcon,MagnifyingGlassIcon} from '@heroicons/react/24/solid'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../features/adminLoginSlice';
+
 
 
 function Navbar({name,home,searchBar}) {
+  const dispatch = useDispatch()
+  const {currUser} = useSelector(state => state.adminLogin)
   const[searchText,setSearchText] = useState("")
   const navigate = useNavigate()
   const handleClick=()=>{
@@ -37,11 +42,23 @@ function Navbar({name,home,searchBar}) {
                     className='p-2 text-xl bg-orange-400 font-bold font-BebasNeue tracking-[2px] hover:scale-105 hover:transition hover:duration-150 ease-out  text-white uppercase '
                     >Search</button>
          </div>}
-          <div className='flex items-cente'>
-              <button onClick={handleClick}>
+         <div className='items-cente flex' >
+         {currUser ? 
+         <button onClick={()=> {
+          console.log(window.location.pathname)
+          if(window.location.pathname === "/dashboard") navigate("/home")
+          else if(window.location.pathname == "/home" && currUser) navigate('/dashboard')
+
+        }
+        } >
+              <HomeIcon className='h-8 w-8 text-orange-500 ' /> 
+         </button>
+         :
+         <button onClick={handleClick}>
               <UserCircleIcon className='h-8 w-8 text-orange-500' />
-              </button>
-          </div>
+         </button>
+        }   
+        </div>
         </nav>
       );
 }

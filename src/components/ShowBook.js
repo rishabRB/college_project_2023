@@ -3,10 +3,9 @@ import React from 'react'
 function ShowBook({book}) {
   
   return (
-    <div className='w-[80%] sm:h-[300px] justify-between bg-white hover:scale-105 transition my-5 duration-150 ease-in-out flex flex-col sm:flex-row rounded-lg shadow-lg '>
-
+    <div className='w-[80%] md:w-[90%] sm:h-[300px] justify-between bg-white hover:scale-105 transition my-5 duration-150 ease-in-out flex flex-col sm:flex-row rounded-lg shadow-lg '>
         {/* book image */}
-        <div className='m-3 sm:m-0 md:h-[300px] md:w-[40%]'>
+       <div className='m-3 sm:m-0 md:h-[300px] md:w-[40%]'>
             <img 
             className="w-full h-[400px] sm:w-full sm:h-full "
             src={book.image} 

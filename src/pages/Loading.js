@@ -20,7 +20,6 @@ function Loading() {
           <h1 className='uppercase text-3xl font-bold'>Welcome to <spna className="text-orange-400">LMS</spna></h1>
         </div>
     </div>
-    <Footer bgColor={true} />
     </>
   )
 }

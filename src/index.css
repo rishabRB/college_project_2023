@@ -24,6 +24,10 @@
   .headingText{
     @apply text-2xl text-gray-500 uppercase tracking-[2px] font-bold font-mono
   }
+
+  .footerButton{
+    @apply flex items-center space-x-2 cursor-pointer hover:scale-105 duration-150 ease-in-out transition
+  }
 }
 
 body {

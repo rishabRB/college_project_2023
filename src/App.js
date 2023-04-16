@@ -4,41 +4,31 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate
 } from "react-router-dom";
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import ProgressBar from '@badrap/bar-of-progress'
 import Search from './pages/Search';
 import Loading from './pages/Loading';
-import { useEffect,useState } from 'react';
 import BasicLoading from './pages/BasicLoading';
-
-
-// progress bar 
-const progress = new ProgressBar({
-  size:4,
-  color:"#FE595E",
-  className:"z-50",
-  delay:100
-})
-
-progress.start()
-setTimeout(() => {
-  progress.finish();
-}, 1000);
-
-
+import { useSelector } from 'react-redux';
 
 function App() {
+
+
+  const {currUser,isFetching} = useSelector(state => state.adminLogin)
+  // const currUser = true
+  const books = true
   return (
     <Router>
     <div className="App">
       <Routes>
-       <Route path="/loading" element={<BasicLoading />} />
+       <Route path="/searchLoading" element={books ? <Navigate to="/search" /> : <BasicLoading />} />
+       <Route path="/loginLoading" element={currUser ? <Navigate to="/dashboard" /> : isFetching ? <BasicLoading /> : <Login  />} />
        <Route path="/" element={<Loading />} />
        <Route path='/home' element={<Home/>} />
        <Route path='/login' element={<Login />} />
-       <Route path="/dashboard" element={<Dashboard />} />
+       <Route path="/dashboard" element={currUser ? <Dashboard /> : <Navigate to='/home' />} />
        <Route path="/search" element={<Search />} />
       </Routes>
     </div>

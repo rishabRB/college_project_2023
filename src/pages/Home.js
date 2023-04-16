@@ -1,19 +1,21 @@
-// import {PrinterIcon, TvIcon, UserIcon, WalletIcon } from '@heroicons/react/24/solid'
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer'
-// import Carousel from '../components/carousel'
-// import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-// import {quotes} from '../utils/data'
+import ProgressBar from "@badrap/bar-of-progress";
+
+
+
 
 function Home() {
+
+
   const [bookName,setBookName] = useState("")
   const [author,setAuthor] = useState("")
   const navigate = useNavigate()
   // console.log(bookName,author)
   const handleClick=()=>{
-       navigate("/loading")
+       navigate("/searchLoading")
    }
 
   return (
@@ -21,7 +23,7 @@ function Home() {
     <Navbar home={true}/>
 
     {/* Banner section */}
-    <section className='h-[680px] xl:h-screen bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=2160&h=")] bg-image'>
+    <section className='h-[80vh] bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=2160&h=")] bg-image'>
     <div className='relative grid grid-cols-2 '>
               <div className='hidden sm:flex flex-col absolute space-y-4 left-8 top-52 w-1/2'>
                 {/* show content */}
