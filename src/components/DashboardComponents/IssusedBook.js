@@ -1,8 +1,8 @@
 import { ChartBarIcon } from '@heroicons/react/24/solid'
-import axios from 'axios'
 import React, { useEffect,useState } from 'react'
 import ShowIssuedBook from '../ShowIssuedBook'
 import {BookOpenIcon} from '@heroicons/react/24/solid'
+import { publicRequest } from '../requestMethod'
 
 function IssusedBook() {
   const [bookData,setBookData] = useState([])
@@ -16,7 +16,7 @@ function IssusedBook() {
   const getbooks = async ()=>{
       setIsloading(true)
       try{
-        const res = await axios.get("http://localhost:3030/books/allBooks/")
+        const res = await publicRequest.get("/books/allBooks/")
         if(res.status === 200) {
           setIsloading(false)
           setBookData(res.data) 

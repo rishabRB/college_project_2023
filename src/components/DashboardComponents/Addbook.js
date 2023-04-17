@@ -22,6 +22,7 @@ function Addbook() {
          if(res.status === 200){
           setIsLoading(false)
           setbookAdded(true)
+          resetData()
          } 
       }
       catch(err){
@@ -31,6 +32,13 @@ function Addbook() {
         }
       }
 
+  }
+
+  const resetData=()=>{
+    setTimeout(()=>{
+      setbookAdded(false)
+      reset()
+    },2000)
   }
 
   useEffect(()=>{
@@ -167,7 +175,7 @@ function Addbook() {
         </div>
         </div>
         :
-        <div className='w-screen h-screen items-center justify-center'>
+        <div className='w-full flex items-center justify-center'>
         <div className='border flex flex-col justify-center bg-orange-100/90 items-center w-[500px] h-[200px] p-10'>
             <FaceSmileIcon className='h-10 w-10 text-orange-400' />
             <h1 className='uppercase flex text-green-500'>Thank you for helping public.</h1>
