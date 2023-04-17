@@ -1,5 +1,5 @@
 import { PlusIcon } from '@heroicons/react/24/solid'
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import {useForm} from 'react-hook-form'
 import { publicRequest } from '../requestMethod'
 import {BookOpenIcon,FaceSmileIcon} from '@heroicons/react/24/solid'
@@ -9,7 +9,8 @@ import {BookOpenIcon,FaceSmileIcon} from '@heroicons/react/24/solid'
 function Addbook() {
   const [isloading,setIsLoading] = useState(false)
   const [bookadded  ,setbookAdded] = useState(false)
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const [alreadyAdded,setAlredyAdded] = useState(false)
+  const { register, handleSubmit,reset, watch, formState: { errors } } = useForm();
   const onSubmit=async(data)=>{
     addBookData(data)
   }
@@ -32,6 +33,35 @@ function Addbook() {
 
   }
 
+  useEffect(()=>{
+    if(watch("book_id").length === 5){
+      getBook()
+    }
+    if(watch("book_id").length < 5){
+      setAlredyAdded(false)
+    }
+  },[watch("book_id")])
+
+
+  const getBook=async()=>{
+    try{
+      const res = await publicRequest.get(`/books/getbook?book_id=${watch("book_id")}`)
+      if(res.status === 200){
+        setAlredyAdded(true)
+        ResetData()
+      }
+    }
+    catch(err){
+        console.log(err)
+    }
+
+  }
+
+  const ResetData=()=>{
+    setTimeout(()=>{
+      reset()
+    },1000)
+  }
 
 
   // regular expression for only numbers 
@@ -40,17 +70,17 @@ function Addbook() {
 
   return (
     <>
-    <div className='flex flex-col h-full sm:h-[86vh] font-mono'>
+    <div className='flex flex-col w-full h-full sm:h-[86vh] font-mono'>
     <div className='p-5 m-5 border-2 border-gray-200 flex space-x-2 items-center justify-center'>
       <PlusIcon className='h-8 w-8 text-orange-500' />
       <h1 className='headingText'>Add book</h1>
     </div>
     {
     !isloading ? 
-    <div className=''>
+    <div className='w-full h-full items-center justify-center'>
        { !bookadded ?
         <div className='px-5 w-full flex flex-col sm:flex-row justify-around items-center space-x-4 space-y-4'>
-        <form onSubmit={handleSubmit(onSubmit)} className='flex sm:w-1/2 justify-start flex-col space-y-4'>
+        <form autoComplete='off' onSubmit={handleSubmit(onSubmit)} className='flex sm:w-1/2 justify-start flex-col space-y-4'>
         <h2 className='uppercase font-medium'>Enter the following details</h2>
         <input 
             className='issueButton'
@@ -84,13 +114,24 @@ function Addbook() {
             {errors.author_name?.type === 'required' && <span className='text-red-400 px-2 text-[10px] text-start' role="alert">Author name is required</span>}
 
             <input
-            {...register('total_number_book',{required:true})}
+            {...register('description',{required:true})}
+            type="text"
+             placeholder='Description'
+             className='issueButton'
+             aria-invalid={errors.total_number_book ? "true" : "false"} 
+            />
+            {errors.totalBooks?.type === 'required' && <span className='text-red-400 px-2 text-[10px] text-start' role="alert">Book description is required</span>}
+
+
+            <input
+            {...register('totalBooks',{required:true})}
              placeholder='Total Number of books'
              className='issueButton'
             aria-invalid={errors.total_number_book ? "true" : "false"} 
             />
-            {errors.total_number_book?.type === 'required' && <span className='text-red-400 px-2 text-[10px] text-start' role="alert">Total number of book is required</span>}
+            {errors.totalBooks?.type === 'required' && <span className='text-red-400 px-2 text-[10px] text-start' role="alert">Total number of book is required</span>}
 
+           
             <input
             {...register('image_url')}
              placeholder='Book Image (url)'
@@ -99,7 +140,8 @@ function Addbook() {
 
              <input
              type="submit"
-              className='px-5 py-3 w-full sm:w-[50%] bg-black text-white rounded-2xl'
+             disabled={alreadyAdded}
+              className='px-5 py-3 w-full sm:w-[50%] disabled:bg-black/30 disabled:cursor-not-allowed bg-black text-white rounded-2xl'
               />
         </form>
         {/* preview section */}
@@ -114,6 +156,7 @@ function Addbook() {
                   {watch("book_name") && <h2 className='text-sm uppercase font-medium'>Name : {watch("book_name")} </h2>}
                   {watch("author_name") && <h2 className='text-sm uppercase font-medium'>Author : {watch("author_name")} </h2>}
                </div>
+               {alreadyAdded && <h2 className='text-red-400 uppercase'>Book Id already exits</h2>}
             </div >
             :
             <div className="flex w-full flex-col  items-center justify-center">
@@ -124,9 +167,11 @@ function Addbook() {
         </div>
         </div>
         :
-        <div className='space-y-2 border flex flex-col justify-center bg-orange-100/90 items-center w-[500px] h-[200px] p-10'>
+        <div className='w-screen h-screen items-center justify-center'>
+        <div className='border flex flex-col justify-center bg-orange-100/90 items-center w-[500px] h-[200px] p-10'>
             <FaceSmileIcon className='h-10 w-10 text-orange-400' />
             <h1 className='uppercase flex text-green-500'>Thank you for helping public.</h1>
+        </div>
         </div>
       }
     </div>

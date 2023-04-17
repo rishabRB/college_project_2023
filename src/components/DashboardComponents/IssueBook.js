@@ -1,9 +1,9 @@
 import { BookOpenIcon, DocumentTextIcon, FaceSmileIcon} from '@heroicons/react/24/solid'
 import React, { useState, useEffect} from 'react'
 import {useForm,Controller} from 'react-hook-form'
-import axios from 'axios';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { publicRequest } from '../requestMethod';
 
 function IssueBook() {
   const {register,control, handleSubmit, watch,reset,formState: { errors }} = useForm();
@@ -20,7 +20,7 @@ function IssueBook() {
     sendStudentDetail(data.student_name,data.registration_number)
     setIssuing(true)
     try{
-      const res = await axios.post("http://localhost:3030/books/issuebook",data)
+      const res = await publicRequest.post("/books/issuebook",data)
       if(res.status === 200) {
         setIssued(true)
         setIssuing(false)
@@ -36,7 +36,7 @@ function IssueBook() {
 
   const sendStudentDetail=async (student_name,registration_number)=>{
     try{
-        await axios.post("http://localhost:3030/user/studentdetail",{student_name:student_name,registration_number:registration_number})
+        await publicRequest.post("/user/studentdetail",{student_name:student_name,registration_number:registration_number})
     }
     catch(err){
       console.log(err)
@@ -63,7 +63,7 @@ function IssueBook() {
 
   const getBookDetails= async()=>{
     try{
-      const res = await axios.get(`http://localhost:3030/books/getbook?book_id=${watch("book_id")}`)
+      const res = await publicRequest.get(`/books/getbook?book_id=${watch("book_id")}`)
       if(res.status === 200) setBookdata(res.data)
     }catch(err){
       if(err.response.status === 400) setbookError(true)
