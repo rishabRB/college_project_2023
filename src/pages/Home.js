@@ -61,7 +61,7 @@ function Home() {
       <Navbar home={true} />
 
       {/* Banner section */}
-      <section className='h-[80vh] bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=2160&h=")] bg-image'>
+      <section className='h-[80vh] bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://ucarecdn.com/84aa8c86-f3cc-44e7-97f8-c011b720ae73/pexelsphoto2041540.jpeg")] bg-image'>
         <div className="relative grid grid-cols-2 ">
           <div className="hidden sm:flex flex-col absolute space-y-4 left-8 top-52 w-1/2">
             {/* show content */}

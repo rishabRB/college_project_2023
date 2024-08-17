@@ -50,7 +50,7 @@ function Login() {
   return (
     <>
     <Navbar home={true}/>
-    <div className='h-[80vh]  relative bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800")] bg-image'>
+    <div className='h-[80vh]  relative bg-no-repeat bg-fixed bg-cover items-center bg-[url("https://ucarecdn.com/84aa8c86-f3cc-44e7-97f8-c011b720ae73/pexelsphoto2041540.jpeg")] bg-image'>
         <div className='w-[400px] absolute right-12 top-32 h-[420px] py-5 px-10 bg-white rounded-xl'>
             {/* error section */}
             {error &&  <div className='text-[10px] text-red-600'>
