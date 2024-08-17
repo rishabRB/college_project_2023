@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginUser } from '../features/apicall';
 import ProgressBar from "@badrap/bar-of-progress";
+import { enqueueSnackbar } from 'notistack';
 
 
 function Login() {
@@ -28,7 +29,15 @@ function Login() {
   const navigate = useNavigate()
   const {error}=useSelector((state)=>state.adminLogin)
   const onSubmit = data => {
-    userLogin(data)
+    if(!data.username){
+      enqueueSnackbar("Enter Username",{variant : "error"})
+    }
+    else if(!data.password){
+      enqueueSnackbar("Enter Password",{variant : "error"})
+    }
+    else{
+      userLogin(data)
+    }
   }
 
   const userLogin=(data) =>{
@@ -64,19 +73,16 @@ function Login() {
                  {...register('username')}
                  className='px-5 py-3 border-2 rounded outline-0'
                  placeholder='Username'
-                 required={true}
                 />
                 <input 
                 {...register('password')}
                 className='px-5 py-3 border-2 rounded outline-0'
                 placeholder='Password'
                 type="password"
-                required={true}
                  />
                  <input
                  type="submit"
                  className='bg-black text-white px-5 py-3 w-[100px] uppercase font-bold rounded-full'
-                //  onClick={userLogin}
                  />
             </form>
         </div>

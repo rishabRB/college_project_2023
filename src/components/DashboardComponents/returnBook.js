@@ -17,6 +17,14 @@ function ReturnBook() {
     getUserBooks()
   }  
 
+  const[updateBook,setUpdateBooks] = useState(false)
+
+
+  const updateBookData=()=>{
+    setUpdateBooks(!updateBook)
+  }
+
+
   useEffect(()=>{
     if(watch("registration_number").length === 11){
       getstudentDetails()
@@ -43,6 +51,9 @@ function ReturnBook() {
       }
   }
 
+  useEffect(()=>{
+    getUserBooks()
+  },[updateBook])
 
   const getUserBooks = async()=>{
     setIsLoading(true)
@@ -67,10 +78,13 @@ function ReturnBook() {
  
   // regular expression for only numbers 
   const onlyNumbers = /^\d+$/;
+
+
+
   
   const GoBack=()=>{
-    setshowBook(false)
-    reset()
+      setshowBook(false)
+      reset()
   }
 
 
@@ -146,7 +160,7 @@ function ReturnBook() {
             <BookOpenIcon className='h-10 w-10 animate-bounce text-orange-400'/>
         </div>
         :
-        <div className='h-full ' >
+        <div className='h-full' >
         {bookdata ? 
         <div className='flex flex-col'>
         <div className='w-full text-start flex px-5 space-x-5'>
@@ -156,9 +170,9 @@ function ReturnBook() {
         <h2 className='uppercase font-bold text-black'>All Issued books ({bookdata.length})</h2>
         </div>
         <div className='p-5 h-[500px] scrollbar-none sm:h-[540px] overflow-y-scroll' >
-        <p className='px-10 text-start uppercase text-[10px] sm:text-lg'>Student name : {bookdata[0].student_name}</p> 
+        <p className='px-10 text-start uppercase text-[10px] sm:text-lg'>Student name : {Studentdetail.student_name}</p> 
         {bookdata?.map((book,index)=>(
-            <ShowUserBook key={index} GoBack={GoBack} book={book} />
+            <ShowUserBook key={index} GoBack={GoBack} book={book} updateBookData={updateBookData} />
           ))}
         </div>
         </div>

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import  adminLoginSlice  from '../features/adminLoginSlice'
-import { bookMaintainSlice } from '../features/bookMaintainSlice'
+import  bookMaintainSlice from '../features/bookMaintainSlice'
 
 export default configureStore({
   reducer: {

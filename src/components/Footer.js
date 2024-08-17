@@ -10,9 +10,9 @@ function Footer() {
         {/* Privacy policy */}
         <div className='flex flex-col items-start'>
           <h1 className='text-orange-400 font-bold'>PRIVACY POLICY</h1>
-          <span>Instagram</span>
-          <span>Facebook</span>
-          <span>Twitter</span>
+          <span>Cookie policy</span>
+          <span>How it works</span>
+          <span>Security policy</span>
         </div>
 
         {/* social links */}
@@ -35,17 +35,17 @@ function Footer() {
         {/* contact */}
         <div className='flex flex-col items-start'>
           <h1 className='text-orange-400 font-bold'>CONTACT</h1>
-          <span>Instagram</span>
-          <span>Facebook</span>
-          <span>Twitter</span>
+          <span>Meet the staff</span>
+          <span>libary@college.com</span>
+          <span>+91 88888888</span>
         </div>
 
         {/* about */}
         <div className='flex flex-col items-start '>
           <h1 className='text-orange-400 font-bold'>ABOUT</h1>
-          <span>Instagram</span>
-          <span>Facebook</span>
-          <span>Twitter</span>
+          <span>About us</span>
+          <span>Join our team</span>
+          <span>Gallary</span>
         </div>
       </div>
       <hr />

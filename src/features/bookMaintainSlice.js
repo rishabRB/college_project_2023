@@ -8,21 +8,14 @@ export const bookMaintainSlice = createSlice({
     name:"bookMaintain",
     initialState,
     reducers:{
-       addBook:(state,action)=>{
-
-       },
-       editBook:(state,action)=>{
-
-       },
-       returnBook:(state,action)=>{
-
-       },
-       issueBook:(state,action)=>{
-
-       },
-       issusedBook:(state,action)=>{
-
-       }
-
+        addBooks:(state,action)=>{
+            state.bookData = action.payload
+        },
+        clearBook:(state)=>{
+            state.bookData = null
+        }
     }
 })
+
+export const {addBooks,clearBook} = bookMaintainSlice.actions
+export default bookMaintainSlice.reducer

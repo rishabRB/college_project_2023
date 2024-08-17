@@ -64,6 +64,7 @@ function Dashboard() {
 
   const handleLogOut=()=>{
     dispatch(logout)
+    localStorage.clear()
     window.location.reload()
   }
 
