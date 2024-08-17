@@ -105,9 +105,10 @@ function Navbar({ name, home, searchBar }) {
         {currUser ? (
           <button
             onClick={() => {
-              console.log(window.location.pathname);
               if (window.location.pathname === "/dashboard") navigate("/home");
               else if (window.location.pathname == "/home" && currUser)
+                navigate("/dashboard");
+              else if (window.location.pathname == "/search" && currUser)
                 navigate("/dashboard");
             }}
           >

@@ -1,6 +1,6 @@
 import React from 'react'
 import ErrorPage from '../components/errorPage'
-import Footer from '../components/Footer'
+
 import Navbar from '../components/Navbar'
 import ShowBook from '../components/ShowBook'
 import { useSelector } from 'react-redux'
@@ -20,7 +20,6 @@ function Search() {
     {bookData.length > 0 ? bookData?.map((book,index)=><ShowBook key={index} book={book}/>) : <ErrorPage error="No books available" /> }
     </div>
     </section>
-    <Footer />
     </>
   )
 }
