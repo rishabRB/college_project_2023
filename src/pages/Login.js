@@ -31,7 +31,7 @@ function Login() {
   return (
     <>
       <Navbar home={true} />
-      <div className='h-[80vh] relative flex justify-center items-center bg-no-repeat bg-fixed bg-cover bg-[url("https://ucarecdn.com/84aa8c86-f3cc-44e7-97f8-c011b720ae73/pexelsphoto2041540.jpeg")]'>
+      <div className='h-[80vh] relative flex justify-center items-center bg-no-repeat bg-fixed bg-cover bg-[url("https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")]'>
         <div className='w-[90%] sm:w-[400px] h-[420px] py-5 px-5 sm:px-10 bg-white rounded-xl sm:absolute sm:right-12'>
           {/* error section */}
           {error && (
@@ -54,12 +54,12 @@ function Login() {
           <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center space-y-5'>
             <input
               {...register('username')}
-              className='w-full px-5 py-3 border-2 rounded outline-0'
+              className='w-full px-5 py-3 border border-gray-300 rounded outline-0'
               placeholder='Username'
             />
             <input
               {...register('password')}
-              className='w-full px-5 py-3 border-2 rounded outline-0'
+              className='w-full px-5 py-3 border border-gray-300 rounded outline-0'
               placeholder='Password'
               type="password"
             />

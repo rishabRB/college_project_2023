@@ -17,7 +17,7 @@ function ShowBook({book}) {
             <h2 className='uppercase font-BebasNeue font-medium text-[#344055] text-2xl md:text-4xl'>{book.name}</h2>
             <h2 className='font-ubuntu text-xl uppercase text-gray-400'>Book Id : {book.book_id}</h2> 
             <h2 className='font-ubuntu text-xl uppercase text-gray-400'>{book.author}</h2>
-            <p className='text-gray-600'>{book.description}</p>
+            <p className='text-gray-600 lowercase'>{book.description}</p>
             </div>
             <div>
             {book.availableBooks > 1 ? <button className='uppercase p-2 bg-green-400'>available</button> :
